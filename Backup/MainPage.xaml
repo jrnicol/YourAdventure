@@ -1,0 +1,62 @@
+﻿<phone:PhoneApplicationPage
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" xmlns:ec="clr-namespace:Microsoft.Expression.Interactivity.Core;assembly=Microsoft.Expression.Interactions" 
+    xmlns:System="clr-namespace:System;assembly=mscorlib" 
+    x:Class="YourAdventure.MainPage" 
+    mc:Ignorable="d" d:DesignWidth="728" d:DesignHeight="480" 
+    SupportedOrientations="Landscape"  Orientation="Landscape" CacheMode="BitmapCache">
+    <phone:PhoneApplicationPage.Resources>
+        <System:Boolean x:Key="Boolean1">True</System:Boolean>
+    </phone:PhoneApplicationPage.Resources>
+    <phone:PhoneApplicationPage.FontFamily>
+        <StaticResource ResourceKey="PhoneFontFamilyNormal"/>
+    </phone:PhoneApplicationPage.FontFamily>
+    <phone:PhoneApplicationPage.FontSize>
+        <StaticResource ResourceKey="PhoneFontSizeNormal"/>
+    </phone:PhoneApplicationPage.FontSize>
+    <phone:PhoneApplicationPage.Foreground>
+        <StaticResource ResourceKey="PhoneForegroundBrush"/>
+    </phone:PhoneApplicationPage.Foreground>
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar x:Name="mainapplicationbar" IsMenuEnabled="False">
+            <shell:ApplicationBarIconButton x:Name="btnLoad" IconUri="/Assets/AppBar/load.png" IsEnabled="False" Text="Load "/>
+            <shell:ApplicationBarIconButton x:Name="btnSave" IconUri="/Assets/AppBar/appbar.save.rest.png" IsEnabled="False" Text="Save"/>
+            <shell:ApplicationBarIconButton x:Name="btnHome" IconUri="/Assets/AppBar/appbar.basecircle.rest.png" IsEnabled="False" Text="Home"/>
+            <shell:ApplicationBarIconButton x:Name="btnHelp" IconUri="/Assets/AppBar/appbar.questionmark.rest.png" IsEnabled="True" Text="Help" Click="btnHelp_Click"/>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush ImageSource="Content/Backgrounds/theroad.jpg"/>
+        </Grid.Background>
+        <Image Margin="351,32,117,10" Source="Content/Images/sherpa.png" Stretch="UniformToFill" RenderTransformOrigin="0.5,0.5">
+            <Image.RenderTransform>
+                <CompositeTransform ScaleX="-1"/>
+            </Image.RenderTransform>
+        </Image>
+        <Image Margin="159,41,392,10" Source="Content/Images/DrL.png" Stretch="UniformToFill"/>
+
+        <StackPanel Margin="0,314,0,10" RenderTransformOrigin="0.5,0.5" >
+            <Button x:Name="btnNewGame" Content="Start A New Game" Click="New_Game_Click" BorderBrush="#FF170101" CacheMode="BitmapCache" Opacity="0.8" FontSize="24" BorderThickness="5" FontFamily="Segoe WP SemiLight" FontWeight="Bold" Foreground="#FF89F5B7">
+                <Button.Background>
+                    <SolidColorBrush Color="{StaticResource PhoneBackgroundColor}"/>
+                </Button.Background>
+            </Button>
+            <Button x:Name="btnContinueGame" Content="Continue Game or Load Saved" Click="Continue_Game_Click" BorderBrush="#FF0F0101" Height="73" Foreground="#FF89F5B7" Background="Black" Opacity="0.8" FontSize="24" BorderThickness="5" ClickMode="Hover" FontFamily="Segoe WP SemiLight" FontWeight="Bold"/>
+        </StackPanel>
+        <Image Margin="592.512,59.093,57.491,299.727" Source="Content/Images/Front Cover.jpg" RenderTransformOrigin="0.5,0.5" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <Image.RenderTransform>
+                <CompositeTransform Rotation="1.833"/>
+            </Image.RenderTransform>
+        </Image>
+
+    </Grid>
+</phone:PhoneApplicationPage>
